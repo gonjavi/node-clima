@@ -19,6 +19,7 @@ npm 6.14.8
 ### Test
 
 En la linea de comandos ejecutar node app-c nombreciudad ejemplo: node app -c "New York"
+ó node app --city cali
 
 ## Author
 
