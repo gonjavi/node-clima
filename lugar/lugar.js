@@ -17,12 +17,12 @@ const getLugar = async(direc) => {
   const data = resp.data.data[0];
   const direccion = data.attributes.url;
   const lat = data.attributes.title;
-  const lng = data.attributes.author;
+  const lon = data.attributes.author;
 
   return {
     direccion,
     lat,
-    lng,
+    lon
   }
 
 }
