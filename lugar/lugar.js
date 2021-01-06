@@ -1,29 +1,23 @@
 const axios = require('axios');
 
-const getLugar = async(direc) => {
-  const encodeUlr = encodeURI(direc); // convierte a caracteres seguros "new york" cuando hay espacios o así
+const getLugar = async(ciudad) => {
+  try {
+    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=417fb681a30266d44c9b71fea885a158`);
+     
+    const lat = resp.data.coord.lat;
+    const lon = resp.data.coord.lon;
+
+    return {     
+      lat,
+      lon
+    }
+  } catch (error) {
+    
+    return `No se puede determinar la latitud y longitud de ${ciudad}`;
+  }  
+
+
   
-  const instance = axios.create({
-    baseURL: 'https://videosapi-gon.herokuapp.com/api/v1/videos/',
-    headers: {'x-rapidapi-key': '4a0415d61fmshb29aee0f23eef58p1eb7f1jsnaec133322bc6'}
-  });
-
-  const resp = await instance.get();
-
-  if (resp.data.data.length === 0) {
-    throw new Error(`No hay resultados para ${direccion}`);
-  }
-
-  const data = resp.data.data[0];
-  const direccion = data.attributes.url;
-  const lat = data.attributes.title;
-  const lon = data.attributes.author;
-
-  return {
-    direccion,
-    lat,
-    lon
-  }
 
 }
 
