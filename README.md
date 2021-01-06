@@ -1,6 +1,6 @@
 # Weather App - NodeJS
 
-Esta e suna apliación que obtiene la temperatura de cualquier ciudad deseada, todo esto se realiza en la linea de comandos.
+Esta es una apliación que obtiene la temperatura de una ciudad deseada, todo esto se realiza en la linea de comandos.
 
 
 ## Built With
